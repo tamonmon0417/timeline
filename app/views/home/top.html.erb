@@ -1,2 +1,4 @@
-<h1>Home#top</h1>
-<p>Find me in app/views/home/top.html.erb</p>
+
++<% @client.home_timeline.first(9).each do |tweet| %>
+    +<%= tweet.text %>
+    +    <% end %>
