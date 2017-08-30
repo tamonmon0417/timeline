@@ -21,4 +21,4 @@
 .byebug_history
 
 # Ignore other unneeded files.
-.env
+*.env
