@@ -18,6 +18,8 @@ gem 'bootstrap-sass'
 gem 'twitter'
 # Use dotenv-rails
 gem 'dotenv-rails', require: 'dotenv/rails-now'
+# Use instagram api
+gem 'instagram', :git => 'git://github.com/Instagram/instagram-ruby-gem.git'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
