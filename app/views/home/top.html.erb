@@ -1,17 +1,30 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-12">
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-12 col-xl-12">
       <% @posts.each do |post| %>
-          <div class="thumbnail">
+          <div class="thumbnail triplicate">
             <% if post.text == nil %>
-                <%= image_tag post.images.low_resolution.url %>
+                <div>
+                  <span style="float: left;"><%= post.created_at.strftime("%Y年%m月%d日") %></span>
+                  <span style="float: right;" class="favorite" id="<%= post.id %>"><%= 'お気に入り' %></span>
+                </div>
+                <%= image_tag post.images.low_resolution.url, class:"img-responsive" %>
                 <div class="caption">
                   <%= post.text %>
                 </div>
             <% elsif post.media[0] %>
+                <div>
+                  <span style="float: right;" class="favorite" id="<%= post.id %>"><%= 'お気に入り' %></span>
+                  <span style="float: left;"><%= post.created_at.strftime("%Y年%m月%d日") %></span>
+                </div>
                 <%= image_tag(post.media[0].media_url, class:"img-responsive center-block") %><br>
                 <%= post.text %>
             <% else %>
+                <div>
+                  <span style="float: left;"><%= post.created_at.strftime("%Y年%m月%d日") %></span>
+                  <span style="float: right;" class="favorite" id="<%= post.id %>"><%= 'お気に入り' %></span>
+                </div>
+                <br>
                 <%= post.text %>
             <% end %>
           </div>
@@ -19,3 +32,26 @@
     </div>
   </div>
 </div>
+
+
+<script>
+    jQuery(function ($) {
+        $('.favorite').click(function () {
+            var lid = this.id,
+                cookie = Cookies.set('liked' + lid);
+            if (cookie == 1) {
+                Cookies.remove('liked' + lid)
+            } else {
+                Cookies.set('liked' + lid, 1, {
+                    expires: 30
+                });
+            }
+            $(this).toggleClass('added');
+            $(this).html($(this).text() == 'お気に入り' ? 'お気に入り' : 'お気に入り');
+        }).each(function () {
+            if (Cookies.set('liked' + this.id) == 1) {
+                $(this).addClass('added').text('お気に入り')
+            }
+        })
+    })
+</script>

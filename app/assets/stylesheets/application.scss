@@ -1,2 +1,32 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.favorite {
+  color:#808080;
+  display: inline-flex;
+}
+
+.favorite:before {
+  content:url(/images/unstar.jpeg);
+  padding-right: 2px;
+  padding-top: 1px;
+}
+
+
+
+.added {
+  color:black;
+  display: inline-flex;
+}
+
+.added:before {
+  content:url(/images/star.jpeg);
+  padding-right: 2px;
+  padding-top: 1px;
+}
+
+.triplicate{
+  width: 33.33333%;
+  float: left;
+
+}

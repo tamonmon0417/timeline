@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
 
   require 'twitter'
+  require 'time'
 
   def top
     @client = Twitter::REST::Client.new do |config|
