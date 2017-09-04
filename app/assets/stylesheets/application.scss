@@ -30,3 +30,23 @@
   float: left;
 
 }
+
+
+
+
+/*--------sp-------*/
+
+@media (min-width: 768px) {
+  .container {
+    width: 100%;
+  }
+  img {
+    width: 100%;
+  }
+  span {
+    font-size: 25px;
+  }
+  .navbar-fixed-top, .navbar-fixed-bottom {
+    position: sticky;
+  }
+}

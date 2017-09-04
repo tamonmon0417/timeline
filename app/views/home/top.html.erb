@@ -1,17 +1,18 @@
+
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-4 col-lg-12 col-xl-12">
       <% @posts.each do |post| %>
-          <div class="thumbnail triplicate">
+          <div class="thumbnail">
             <% if post.text == nil %>
                 <div>
                   <span style="float: left;"><%= post.created_at.strftime("%Y年%m月%d日") %></span>
                   <span style="float: right;" class="favorite" id="<%= post.id %>"><%= 'お気に入り' %></span>
                 </div>
                 <%= image_tag post.images.low_resolution.url, class:"img-responsive" %>
-                <div class="caption">
-                  <%= post.text %>
-                </div>
+                <!--<div class="caption">-->
+                  <!--<%= post.tag%>-->
+                <!--</div>-->
             <% elsif post.media[0] %>
                 <div>
                   <span style="float: right;" class="favorite" id="<%= post.id %>"><%= 'お気に入り' %></span>
