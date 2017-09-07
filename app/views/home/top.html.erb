@@ -1,4 +1,3 @@
-
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-4 col-lg-12 col-xl-12">
@@ -10,23 +9,27 @@
                   <span style="float: right;" class="favorite" id="<%= post.id %>"><%= 'お気に入り' %></span>
                 </div>
                 <%= image_tag post.images.low_resolution.url, class:"img-responsive" %>
-                <!--<div class="caption">-->
-                  <!--<%= post.tag%>-->
-                <!--</div>-->
+                <div class="caption">
+                  <%= post.feed %>
+                </div>
             <% elsif post.media[0] %>
                 <div>
                   <span style="float: right;" class="favorite" id="<%= post.id %>"><%= 'お気に入り' %></span>
                   <span style="float: left;"><%= post.created_at.strftime("%Y年%m月%d日") %></span>
                 </div>
-                <%= image_tag(post.media[0].media_url, class:"img-responsive center-block") %><br>
-                <%= post.text %>
+                <%= image_tag(post.media[0].media_url, class:"img-responsive center-block") %>
+                <div class="pd15 fs30">
+                  <%= post.text %>
+                </div>
             <% else %>
                 <div>
                   <span style="float: left;"><%= post.created_at.strftime("%Y年%m月%d日") %></span>
                   <span style="float: right;" class="favorite" id="<%= post.id %>"><%= 'お気に入り' %></span>
                 </div>
                 <br>
-                <%= post.text %>
+                <div class="pd15 fs30">
+                  <%= post.text %>
+                </div>
             <% end %>
           </div>
       <% end %>

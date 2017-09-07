@@ -7,12 +7,15 @@
 }
 
 .favorite:before {
-  content:url(/images/unstar.jpeg);
+  content: '';
+  display: inline-block;
+  background-image:url(/images/unstar.jpeg);
   padding-right: 2px;
   padding-top: 1px;
+  background-size: contain;
+  width: 32px;/*画像の幅*/
+  height: 34px;/*画像の高さ*/
 }
-
-
 
 .added {
   color:black;
@@ -20,19 +23,20 @@
 }
 
 .added:before {
-  content:url(/images/star.jpeg);
+  content: '';
+  display: inline-block;
+  background-image:url(/images/star.jpeg);
   padding-right: 2px;
   padding-top: 1px;
-}
+  background-size: contain;
+  width: 32px;/*画像の幅*/
+  height: 34px;/*画像の高さ*/}
 
 .triplicate{
   width: 33.33333%;
   float: left;
 
 }
-
-
-
 
 /*--------sp-------*/
 
@@ -48,5 +52,11 @@
   }
   .navbar-fixed-top, .navbar-fixed-bottom {
     position: sticky;
+  }
+  .pd15{
+    padding: 15px;
+  }
+  .fs30{
+    font-size: 30px;
   }
 }
